@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+  <div class="gameScreenBorder">
+    <div class="rainbowBorder"></div>
+    <div class="whiteBox">
+      <canvas id="gameScreen" width="800" height="600"></canvas>
+      <script>
+        var GAME_WIDTH = 800;
+        var GAME_HEIGHT = 600;
+      </script>
+      <script type="module" src="src/main-game.js" ></script>
+    </div>
+    <div class="dottedLine"></div>
+  </div>
+
+
+  <!-- <div class="c-subscribe-box u-align-center">
+        <div class="rainbow"><span></span><span></span><span></span></div>
+        <div class="c-subscribe-box__wrapper">
+        </form>
+        </div>
+    </div> -->
+</body>
+
+</html>
