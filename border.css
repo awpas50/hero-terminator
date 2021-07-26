@@ -1,5 +1,5 @@
 :root {
-  --color1: #f18867;
+  --color1: #e85f99;
   --color2: #65587f;
   --color3: #cfd0ac;
   --color4: #8c544f;
@@ -9,10 +9,8 @@
   --gameHeight: 600px;
   --chartLength: 300px;
   --chartRadius: 660px;
-  --borderOuterRadius: 30px;
+  --borderOuterRadius: 10px;
   --border-radius-inner: calc(var(--borderOuterRadius) / 2);
-  --font-plain: "IBM Plex Sans", sans-serif;
-  --font-special: "Fredoka One", sans-serif;
   box-sizing: border-box;
   line-height: 1.4;
 }
@@ -23,6 +21,7 @@
   border-radius: var(--borderOuterRadius);
   position: relative;
   overflow: hidden;
+  z-index: -1;
 }
 .rainbowBorder {
   position: absolute;
@@ -34,30 +33,30 @@
   background-size: 50% 50%;
   background-repeat: no-repeat;
   background-image: linear-gradient(150deg, transparent 63%, var(--color1) 63%),
-    linear-gradient(120deg, transparent 36.5%, var(--color2) 36.5%),
+    linear-gradient(120deg, transparent 36.5%, var(--color1) 36.5%),
     linear-gradient(var(--color1), var(--color1)),
     linear-gradient(240deg, transparent 63%, var(--color2) 63%),
-    linear-gradient(210deg, transparent 36.5%, var(--color1) 36.5%),
+    linear-gradient(210deg, transparent 36.5%, var(--color2) 36.5%),
     linear-gradient(var(--color2), var(--color2)),
     linear-gradient(330deg, transparent 63%, var(--color1) 63%),
-    linear-gradient(300deg, transparent 36.5%, var(--color2) 36.5%),
+    linear-gradient(300deg, transparent 36.5%, var(--color1) 36.5%),
     linear-gradient(var(--color1), var(--color1)),
     linear-gradient(60deg, transparent 63%, var(--color2) 63%),
-    linear-gradient(30deg, transparent 36.5%, var(--color1) 36.5%),
+    linear-gradient(30deg, transparent 36.5%, var(--color2) 36.5%),
     linear-gradient(var(--color2), var(--color2));
   background-position: right top, right top, right top, right bottom,
     right bottom, right bottom, left bottom, left bottom, left bottom, left top,
     left top, left top;
   box-shadow: 0 10px 40px -10px rgba(10, 132, 255, 0.26);
-  animation: rotateCounterClockwise linear 8s infinite;
+  animation: rotateCounterClockwise linear 10s infinite;
+  z-index: -1;
 }
-
 .whiteBox {
-  background-color: wheat;
-  top: 10px;
-  left: 10px;
-  width: calc(var(--gameWidth) - 20px);
-  height: calc(var(--gameHeight) - 20px);
+  background-color: rgb(247, 237, 220);
+  top: 8px;
+  left: 8px;
+  width: calc(var(--gameWidth) - 16px);
+  height: calc(var(--gameHeight) - 16px);
   overflow: hidden;
   position: absolute;
   box-shadow: 0 10px 40px -10px rgba(10, 132, 255, 0.26);
@@ -67,13 +66,15 @@
   position: absolute;
   top: 11px;
   left: 11px;
-  width: calc(var(--gameWidth) - 34px);
-  height: calc(var(--gameHeight) - 34px);
-  border-radius: var(--borderOuterRadius);
-  border: 6px dotted;
+  width: calc(var(--gameWidth) - 32px);
+  height: calc(var(--gameHeight) - 32px - 100px - 3px);
+  border-radius: calc(var(--borderOuterRadius) - 4px);
+  border: 4px dashed;
+  z-index: 1;
 }
 #gameScreen {
   position: absolute;
+  z-index: 10;
 }
 
 @keyframes rotateCounterClockwise {
@@ -83,13 +84,4 @@
   100% {
     transform: rotate(-360deg);
   }
-}
-body {
-  background-color: #5e5e5e;
-  color: #5e5e5e;
-  font-family: var(--font-plain);
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
 }

@@ -1,0 +1,56 @@
+:root {
+  --font-plain: "IBM Plex Sans", sans-serif;
+  --font-special: "Fredoka One", sans-serif;
+}
+
+body {
+  background-color: #5e5e5e;
+  color: #5e5e5e;
+  font-family: var(--font-plain);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#gameScreen {
+  z-index: -1;
+}
+.inventory {
+  border-radius: 8px;
+  background-color: rgb(186, 117, 189);
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  height: 100px;
+  z-index: 2;
+}
+
+button {
+  transition-duration: 0.3s;
+}
+.inventory-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 90%;
+}
+ul {
+  list-style-type: none;
+}
+.inventory-container button {
+  background-color: rgb(42, 53, 49);
+  border: 6px sandybrown solid;
+  border-radius: 4px;
+  color: wheat;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 32px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+.inventory-container button:hover {
+  background-color: #af634c; /* Green */
+  color: white;
+}

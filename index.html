@@ -6,22 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="game-style.css" />
+  <link rel="stylesheet" href="border.css" />
 </head>
 
 <body>
-  
   <div class="gameScreenBorder">
+    <canvas id="gameScreen" width="768" height="462"></canvas>
+    <script>
+      var GAME_WIDTH = 768;
+      var GAME_HEIGHT = 462;
+    </script>
+    <script type="module" src="src/main-game.js" ></script>
     <div class="rainbowBorder"></div>
-    <div class="whiteBox">
-      <canvas id="gameScreen" width="800" height="600"></canvas>
-      <script>
-        var GAME_WIDTH = 800;
-        var GAME_HEIGHT = 600;
-      </script>
-      <script type="module" src="src/main-game.js" ></script>
-    </div>
     <div class="dottedLine"></div>
+    <div class="whiteBox">
+      <div class="inventory">
+        <ul class="inventory-container">
+          <li><button type="button" onclick="alert('Hello world!')">A</button></li>
+          <li><button type="button" onclick="alert('Hello world!')">B</button></li>
+          <li><button type="button" onclick="alert('Hello world!')">C</button></li>
+        </ul>
+      </div>
+    </div>
+    
   </div>
 
 
